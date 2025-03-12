@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>com.ghozimahdi.gmbloc.gmbloc</id>
+    <name>GM-BLoC</name>
+    <vendor email="support@ghozimahdi.com" url="https://www.ghozimahdi.com">GhoziMahdi</vendor>
+
+    <description><![CDATA[
+    <p>Bloc Library Tools for effectively creating blocs for Flutter apps.<p>
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <action id="ghozimahdi.gmbloc.bloc"
+                class="com.ghozimahdi.gmbloc.BlocAction"
+                text="Create Bloc Boilerplate">
+
+            <add-to-group group-id="NewGroup" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
