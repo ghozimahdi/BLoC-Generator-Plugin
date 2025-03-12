@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.vfs.VirtualFile
 
-class BlocAction : AnAction("Create BLoC") {
+class BlocAction : AnAction("Bloc Class") {
     override fun actionPerformed(event: AnActionEvent) {
         val selectedFile: VirtualFile? = event.getData(CommonDataKeys.VIRTUAL_FILE)
         if (selectedFile != null && selectedFile.isDirectory) {

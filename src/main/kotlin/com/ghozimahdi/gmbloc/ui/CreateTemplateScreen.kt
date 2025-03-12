@@ -1,6 +1,9 @@
 package com.ghozimahdi.gmbloc.ui
 
+import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.openapi.vfs.VirtualFileManager
 import com.intellij.util.ui.JBUI
 import java.awt.GridBagConstraints
 import java.awt.GridBagLayout
@@ -70,10 +73,19 @@ class CreateTemplateScreen(private val selectedDirectory: VirtualFile?) {
                         val file = java.io.File("$path/$fileName")
                         file.writeText(content)
                         println("Created file: ${file.absolutePath}")
+
+                        ApplicationManager.getApplication().invokeLater {
+                            LocalFileSystem.getInstance().refreshAndFindFileByIoFile(file)?.refresh(false, false)
+                        }
                     } else {
                         println("Template not found: $resourcePath")
                     }
                 }
+
+                ApplicationManager.getApplication().invokeLater {
+                    VirtualFileManager.getInstance().refreshWithoutFileWatcher(true)
+                }
+
             } ?: println("No directory selected")
         } catch (e: Exception) {
             JOptionPane.showMessageDialog(null, "failed", "Error", JOptionPane.ERROR_MESSAGE)

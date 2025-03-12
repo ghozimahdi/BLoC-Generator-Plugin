@@ -1,11 +1,18 @@
 <idea-plugin>
     <id>com.ghozimahdi.gmbloc.gmbloc</id>
-    <name>GM-BLoC</name>
+    <name>GM-BLoC Generator</name>
     <vendor email="support@ghozimahdi.com" url="https://www.ghozimahdi.com">GhoziMahdi</vendor>
 
     <description><![CDATA[
-    <p>Bloc Library Tools for effectively creating blocs for Flutter apps.<p>
-  ]]></description>
+    <p>Bloc Library Tools for effectively creating blocs for Flutter apps.</p>
+    <p>Find me on:</p>
+    <ul>
+        <li><a href="https://github.com/ghozimahdi" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ghozimahdi" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.ghozimahdi.com" target="_blank">Website</a></li>
+        <li><a href="https://saweria.co/ghozimahdi" target="_blank">Saweria</a></li>
+    </ul>
+]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
@@ -14,6 +21,7 @@
     <actions>
         <action id="ghozimahdi.gmbloc.bloc"
                 class="com.ghozimahdi.gmbloc.BlocAction"
+                icon="AllIcons.Actions.Colors"
                 text="Create Bloc Boilerplate">
 
             <add-to-group group-id="NewGroup" anchor="first"/>
