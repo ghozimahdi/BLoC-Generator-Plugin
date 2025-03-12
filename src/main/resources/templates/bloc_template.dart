@@ -13,7 +13,7 @@ class {{Name}}Bloc extends Bloc<{{Name}}Event, {{Name}}State> {
   }
 
   Future<void> _initEvent(
-      _InitEvent event,
-      Emitter<{{Name}}State> emit,
-  ) {}
+    _InitEvent event,
+    Emitter<{{Name}}State> emit,
+  ) async {}
 }
