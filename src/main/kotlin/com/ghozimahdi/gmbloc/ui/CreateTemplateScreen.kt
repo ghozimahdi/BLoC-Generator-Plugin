@@ -53,7 +53,7 @@ class CreateTemplateScreen(private val selectedDirectory: VirtualFile?) {
                 return
             }
 
-            val namePascalCase = name.replaceFirstChar { it.uppercaseChar() }
+            val namePascalCase = name.split("_").joinToString("") { it.replaceFirstChar { c -> c.uppercaseChar() } }
 
             val files = listOf(
                 "${name}_bloc.dart" to "/templates/bloc_template.dart",
